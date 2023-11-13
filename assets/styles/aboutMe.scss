@@ -1,0 +1,21 @@
+.aboutMe{
+  height: 194px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card{
+  margin-top: 30px;
+  &-title,&-content{
+    display: flex;
+    justify-content: space-between;
+  }
+  &-title{
+    align-items: center;
+  }
+}
+
+.formation{
+  margin-top: 30px;
+}

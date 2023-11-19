@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: calc(100vh - 124px);
+
+  h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+}
+
+#contact {
+  > div {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 20px 0;
+
+    > .form-input {
+      height: 30px;
+      width: 100%;
+      padding-left: 10px;
+      margin-top: 10px;
+      border-color: #80808036;
+
+      &:focus-visible {
+        border-color: $secondary;
+      }
+    }
+
+    > .form-textarea {
+      height: 150px;
+      width: 100%;
+      padding-left: 10px;
+      margin-top: 10px;
+      border-color: #80808036;
+      resize: none;
+
+      &:focus-visible {
+        border-color: $secondary;
+      }
+    }
+  }
+}
+
+.form-content{
+  >ul{
+    >li{
+      color: red;
+    }
+  }
+}
+
+.flash-success {
+  background-color: $backgroundBadge;
+  color: $colorTextBadge;
+  padding: 20px;
+}

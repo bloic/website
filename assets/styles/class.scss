@@ -1,0 +1,12 @@
+.btn {
+  border: none;
+  color: $text-color;
+  padding: 10px;
+  &-primary{
+    background-color: $primary;
+    transition: all 0.6s ease-in-out;
+    &:hover{
+      background-color: $secondary;
+    }
+  }
+}

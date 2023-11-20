@@ -1,0 +1,40 @@
+.container-projet{
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-project {
+  width: 340px;
+  height: 567px;
+  box-shadow: 0 10px 14px 9px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  &-title >img{
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    height: calc(567px - 340px);
+    justify-content: space-between;
+    margin: 20px;
+
+    >h2 {
+      text-align: center;
+    }
+  }
+  &-link{
+    display: flex;
+    justify-content: space-between;
+    >a {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.github-icons, .link-card{
+  height: 20px;
+  margin-right: 20px;
+}

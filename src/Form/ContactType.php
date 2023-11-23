@@ -9,7 +9,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Regex;
 
 class ContactType extends AbstractType
 {
@@ -26,12 +25,6 @@ class ContactType extends AbstractType
                 'row_attr'=>[
                     'class'=>'form-content'
                 ],
-                'constraints' => [
-                    new Regex([
-                        'pattern' => '/^[^<>]*$/',
-                        'message' => 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
-                    ]),
-                ]
             ])
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
@@ -43,12 +36,6 @@ class ContactType extends AbstractType
                 'row_attr'=>[
                     'class'=>'form-content'
                 ],
-                'constraints' => [
-                    new Regex([
-                        'pattern' => '/^[^<>]*$/',
-                        'message' => 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
-                    ]),
-                ]
             ])
             ->add('email', EmailType::class, [
                 'label' => 'E-mail',
@@ -60,12 +47,6 @@ class ContactType extends AbstractType
                 'row_attr'=>[
                     'class'=>'form-content'
                 ],
-                'constraints' => [
-                    new Regex([
-                        'pattern' => '/^[^<>]*$/',
-                        'message' => 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
-                    ]),
-                ]
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'Message',
@@ -77,12 +58,6 @@ class ContactType extends AbstractType
                 'row_attr'=>[
                     'class'=>'form-content'
                 ],
-                'constraints' => [
-                    new Regex([
-                        'pattern' => '/^[^<>]*$/',
-                        'message' => 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
-                    ]),
-                ]
             ]);
     }
 

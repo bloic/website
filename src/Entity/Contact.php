@@ -15,21 +15,35 @@ class Contact
     #[ORM\Column]
     private ?int $id;
 
+    protected CONST REGEXPATERN = '/<[^>]*>|<script[^>]*>.*?<\/script>/';
+
     #[Assert\NotBlank(message: 'Ce champs ne peut être vide')]
+    #[Assert\Regex(pattern: self::REGEXPATERN,
+        message: 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
+        match: false)]
     #[ORM\Column(length: 255)]
     private ?string $lastname;
 
     #[Assert\NotBlank(message: 'Ce champs ne peut être vide')]
+    #[Assert\Regex(pattern: self::REGEXPATERN,
+        message: 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
+        match: false)]
     #[ORM\Column(length: 255)]
     private ?string $firstname;
 
     #[Assert\NotBlank(message: 'Ce champs ne peut être vide')]
     #[Assert\Email( message: 'l\'adresse email {{ value }} n\'est pas valide.')]
+    #[Assert\Regex(pattern: self::REGEXPATERN,
+        message: 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
+        match: false)]
     #[ORM\Column(length: 255)]
     private ?string $email;
 
     #[Assert\NotBlank(message: 'Ce champs ne peut être vide')]
     #[Assert\NotNull]
+    #[Assert\Regex(pattern: self::REGEXPATERN,
+        message: 'Le champ ne doit pas contenir de balises HTML ou de scripts.',
+        match: false)]
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message;
 
